@@ -1,0 +1,639 @@
+@charset "utf-8";
+
+* ,::after,::before{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+main {
+	animation: my-fade-in 2.5s both;
+}
+
+
+@keyframes my-fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+body {
+    background-color: #000;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+ul {
+    color: #fff;
+    list-style: none;
+}
+
+p {
+    color: #fff;
+    line-height: 1.7;
+}
+
+strong {
+    color: #fff;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 50px;
+    color: #fff;
+    font-family: 'Franklin Gothic Medium', 'Microsoft Sans Serif', sans-serif;
+}
+
+h3,h4 {
+    font-size: 35px;
+    color: #fff;
+}
+h5 {
+    font-size: 20px;
+    color: #fff;
+}
+
+table {
+    color: #fff;
+}
+
+a img {
+    transition: transform .6s ease;
+}
+
+a img:hover {
+    transform: scale(1.1);
+}
+
+iframe {
+    width: 840px;
+    height: 472.5px;
+}
+
+.discography h5,.main-disco h3 {
+    font-family: 'Trebuchet MS','Yu Gothic UI',YuGothic,'Yu Gothic',sans-serif;
+}
+
+/*ヘッダー*/
+.header_wrapper {
+    display: flex;
+    height: 100px;
+    justify-content: space-between;
+}
+.header_logo {
+    margin: 30px;
+    position: fixed;
+    z-index:10000
+}
+.header_logo img{
+    width: 150px;
+}
+
+.menu-wrapper {
+    position: relative;
+}
+
+.menu-icon {
+    width: 40px;
+    height: 30px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 3;
+    display: inline-block;
+}
+
+.menu-icon span {
+    display: block;
+    height: 4px;
+    margin: 6px 0;
+    background: #fff;
+    border-radius: 2px;
+    transition: 0.4s;
+}
+#menu-toggle:checked + .menu-icon span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+#menu-toggle:checked + .menu-icon span:nth-child(2) {
+    opacity: 0;
+}
+#menu-toggle:checked + .menu-icon span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s;
+    z-index: 1;
+}
+
+#menu-toggle:checked ~ .overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sns_icon img {
+    width: 50px;
+    height: 35px;
+    margin-left: 10px;
+    filter:invert(100%);
+    object-fit: contain;
+}
+
+.nav_menu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background: #000;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+    transition: left 0.4s ease;
+    z-index: 2;
+}
+#menu-toggle:checked ~ .nav_menu {
+    right: 0;
+}
+.nav_menu ul {
+    list-style: none;
+    padding: 60px 20px;
+}
+.nav_menu li {
+    margin: 10px 0;
+    height: 30px;
+    color: #fff;
+}
+.nav_menu a{
+    font-family: 'Trebuchet MS', 'Yu Gothic UI', YuGothic, 'Yu Gothic', sans-serif;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+.menu-contents a li:hover {
+    color: #ff2c60;
+}
+.menu-sns li{
+    display: flex;
+}
+.menu-contents a li {
+    text-decoration: none;
+    background-image: linear-gradient(90deg, #ff2c60, #ff2c60);;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 0 1px;
+    transition: background-size 0.6s;
+}
+.nav_menu a li:hover{
+    background-size: 100% 1px;
+}
+
+
+/*フッター*/
+footer {
+    background-color: #333;
+}
+.copylight {
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/*index.html*/
+.maincontents hr {
+    border: 0;
+    border-top: 2px solid #ff2c60;
+    margin: 32px 0;
+}
+.mainvisual {
+    width: 70%;
+    margin: auto;
+}
+
+.main-profile {
+    width: 900px;
+    margin: 90px auto;
+}
+.profile {
+    margin-top: 2em;
+    display: flex;
+    justify-content: space-between;
+}
+.mainprofile-img img {
+    width: 400px;
+}
+.profile_date {
+    width: 400px;
+}
+
+.nav_button {
+    margin-top: 2em;
+    text-align: center;
+}
+.nav_button button {
+    display: inline-block;
+    margin-bottom: 2em;
+    padding: 1em 3em;
+    text-decoration: none;
+    color: #fff;
+    border: double 4px #fff;
+    background-color: #000;
+    border-radius: 3px;
+    transition: 0.5s;
+}
+
+.nav_button button:hover {
+    filter:invert(100%);
+}
+
+.disco-image,.song-credit {
+    margin-top: 20px;
+}
+.main-disco,.main-live {
+    width: 1100px;
+    margin: 90px auto;
+}
+.main-songnovel,.live-menu {
+    display: flex;
+    margin-top: 2em;
+}
+.sn-contents {
+    margin: auto;
+}
+.disco-image img {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    background-color: rgba(103, 103, 103, 0.7);
+}
+.song-info {
+    width: 30%;
+    margin: auto;
+}
+.song-credit tr {
+    height: 40px;
+}
+.song-credit th {
+    width: 90px;
+}
+.main-video {
+    margin: 40px 0 20px;
+}
+.main-video iframe{
+    display: block;
+    margin: auto;
+}
+
+.news-media {
+    width: 1000px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+}
+.news,.media {
+    width: 450px;
+}
+.nm-contents {
+    height: 120px;
+    margin: 1em 0;
+}
+.calender p {
+    color: #666;
+    margin-top: 10px;
+}
+.news-media a {
+    transition: color 0.3s;
+}
+.news-media a:hover {
+    color: #ff2c60;
+}
+.news-media .modal-content p a {
+    text-decoration: underline;
+}
+.nm-contents .modal-content {
+    padding: 50px;
+}
+.nm-contents h3 {
+    margin: 20px auto;
+}
+.nm-contents p {
+    margin: 1em auto;
+}
+.news-image img {
+    margin: auto;
+    width: 50%;
+}
+
+.live-menu {
+    margin: auto;
+}
+.livecon-main {
+    margin: 20px 60px 0 0;
+}
+.live-image {
+    overflow: hidden;
+}
+.live-image img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    background-color: rgba(103, 103, 103, 0.7);
+}
+
+
+/*----------セカンドコンテンツ----------*/
+
+.second-visual {
+    width: 900px;
+    margin: auto;
+} 
+.second-visual img {
+    width: 100%;
+}
+
+.second-con h2 {
+    margin-top: 20px;
+    text-align: center;
+}
+.second-con hr {
+    border: 0;
+    border-top: 2px solid #ff2c60;
+    margin: 32px auto;
+    width: 70%;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    animation-name:   my-fade-in;
+    animation-duration: 0.5s;
+}
+
+.modal:target {
+    display: block;
+}
+
+.modal-content {
+    background-color: #000;
+    margin: 3% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 1100px;
+    height: auto;
+    max-height: 90%;
+    border-radius: 8px;
+    overflow-y: scroll;
+    align-items: center;
+}
+
+.close {
+    position: fixed;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    right: 16%;
+}
+
+.close:hover,
+.close:focus {
+    color: #fff;
+}
+
+/*profile.html*/
+.second-profile h3 {
+    font-family: 'Trebuchet MS',sans-serif;
+}
+.yoasobi_pro {
+    margin: auto;
+    width: 1100px;
+}
+.yoasobi_pro h3 {
+    margin: 30px 0;
+}
+.yoasobi_pro_img {
+    text-align: center;
+}
+.yoasobi_pro_img img {
+    width: 1100px;
+}
+
+.artist_pro:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+.artist_pro {
+    margin: 60px auto;
+    display: flex;
+    width: 900px;
+    justify-content: space-between;
+}
+.artist-date {
+    width: 55%
+}
+.artist-date h3 {
+    margin-bottom: 5px;
+}
+.artist-img img {
+    width: 350px;
+}
+.artist-txt {
+    margin: 30px 0;
+    border-left:3px solid #ff2c60;
+    padding:2px 20px;
+}
+
+/*discography.html*/
+
+.discography {
+    width: 1200px;
+    margin: 20px auto 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.disid-button {
+    width: 300px;
+    margin: 50px auto;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+}
+.disid-button a {
+    transition: color 0.3s;
+}
+.disid-button a:hover {
+    color: #ff2c60;
+}
+
+.dis-title {
+    margin-left: 200px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.disco-content {
+    margin: 30px 50px;
+}
+.disco-content h4 {
+    display: flex;
+    align-items: center;
+    margin-top: 7px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.disco-content h4::before,
+.disco-content h4::after {
+    content: "";
+    height: 3px;
+    flex-grow: 1;
+    background-size: 0 3px;
+    background-color: #ff2c60;
+}
+.disco-content h4:before {
+    margin-right: 20px; 
+}
+.disco-content h4:after {
+    margin-left: 20px; 
+}
+.disco-content h5 {
+    font-size: 35px;
+    color: #fff;
+}
+
+.main-alubum {
+    display: flex;
+    align-items: center;
+}
+.alubum-content {
+    margin: auto;
+    margin-right: 50px;
+    width: 300px;
+}
+.alubum-credit tr {
+    height: 30px;
+}
+.alubum-info {
+    margin: 40px auto;
+    width: 300px;
+}
+.alubum-info h5 {
+    margin-bottom: 20px;
+}
+
+
+.song-date {
+    width: 800px;
+    margin:  30px auto;
+    display: flex;
+}
+.novel-date {
+    display: flex;
+    margin: auto;
+}
+
+.disco-content a{
+    text-align: center;
+}
+.modal-img,.disco-image {
+    overflow: hidden;
+}
+.modal-img img{
+    width: 300px;
+}
+
+/*live.html*/
+
+.second-live {
+    width: 1000px;
+    margin: 50px auto;
+}
+.second-live h3 {
+    margin-bottom: 20px;
+    font-family: 'Trebuchet MS',sans-serif;
+}
+.next-live,.live-memory {
+    margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.live-content {
+    width: 300px;
+    margin: 15px;
+}
+.live-content h4 {
+    font-size: 17px;
+}
+.live-content h5 {
+    font-size: 25px;
+}
+.live-content h6 {
+    color: #fff;
+    font-size: 20px;
+    margin-top: 30px;
+}
+.live-content a:hover h4,
+.livecon-main a:hover .live-block p{
+    text-decoration: underline;
+}
+.live-content a:hover img,
+.livecon-main a:hover img {
+    transform: scale(1.1);
+}
+
+.info-img {
+    overflow: hidden;
+}
+.info-img img{
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+.live-info {
+    display: flex;
+    margin: 30px 0 10px;
+    justify-content: space-between;
+}
+.liveinfo-image img {
+    width: 430px;
+}
+.live-date {
+    width: 50%;
+    margin: auto 0;
+}
+.live-date p {
+    margin: 10px 0;
+}
+.live-date p a {
+    transition: color 0.3s;
+    text-decoration: underline;
+}
+.live-date p a:hover {
+    color: #ff2c60;
+}
+.live-date h5 {
+    margin:20px 0 10px;
+    font-size: 30px;
+}
